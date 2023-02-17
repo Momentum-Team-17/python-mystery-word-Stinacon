@@ -8,7 +8,7 @@
     - keep count of guesses and wrong guesses (keep that in a list and find length of it)
         - if the guess is wrong, tell the user that it's wrong
     - keep track of the correct letter guesses
-        - print/display if a guess is right in the string with the underscores
+        - print/display if a guess is right in the string with the underscores ✅
     - if letter has already been guessed, tell the user and don't take away a guess
 
 5. Repeat step 4 while guesses is < 8, or if they guess all the right letters in the word correctly
