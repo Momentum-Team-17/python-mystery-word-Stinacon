@@ -9,26 +9,28 @@ def open_file(file):
         return format_data
 
 
-print(open_file('words.txt'))
+# print(open_file('words.txt'))
 
 # WILL NEED TO CALL FILE FUNCTION
 # open_file('words.txt')
 
 
-# def play_game():
-#     # word = 'apple'
-#     # guess = input('Guess a lowercase letter! ')
-#     wrong_guesses = ['b', 'd']
-#     right_guesses = ['a', 'p']
+def play_game():
+    word_list = open_file('words.txt')
+    print(word_list)
+    # word = 'apple'
+    # user_guess = input('Guess a lowercase letter! ')
+    # wrong_guesses = ['b', 'd']
+    # right_guesses = ['a', 'p']
 
-#     game_board = ''
-#     for letter in word:
-#         if letter in right_guesses:
-#             game_board += letter + ' '
-#         else:
-#             game_board += '_ '
-#     print(game_board)
+    # game_board = ''
+    # for letter in word:
+    #     if letter in right_guesses:
+    #         game_board += letter + ' '
+    #     else:
+    #         game_board += '_ '
+    # print(game_board)
 
 
-# if __name__ == "__main__":
-#     play_game()
+if __name__ == "__main__":
+    play_game()
