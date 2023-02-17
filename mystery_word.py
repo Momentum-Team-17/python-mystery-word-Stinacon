@@ -11,19 +11,15 @@ def open_file(file):
         format_data = data.split()
         return format_data
 
-# def choose_random_word() --> choice() from a random module? or from my .txt file
-
-
-# print(open_file('words.txt'))
-
-# WILL NEED TO CALL FILE FUNCTION
-# open_file('words.txt')
-
 
 def play_game():
     word_list = open_file('words.txt')
     word_to_guess = random.choice(word_list)
+    underscore = '_ ' * (len(word_to_guess))
+    # word_display = (f'({len(word_to_guess)}) * "_ "')
     print(word_to_guess)
+    print(underscore)
+
     # word = 'apple'
     user_guess = input('Guess a lowercase letter! ')
     # ? need to create empty lists (or something) to store user guesses, wrong
