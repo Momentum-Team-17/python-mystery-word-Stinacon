@@ -23,6 +23,7 @@
     - string of underscores = length of word to guess: underscore
     - word to guess underscores stored as list to iterate through: underscore_as_list
     - user guess stored as: user_guess
-    - list to store accumulated right guesses: right_guesses
-    - list to store accumulated wrong guesses: wrong_guesses
-    - number of wrong guesses so far: wrong_guess_count
+    - number tally of right guesses: right_guesses (*not sure i need to keep track of this)
+    - number tally of wrong guesses: wrong_guesses
+    ^^^^ to the above, i will += 1 once I have evaluated which type of guess it is
+   
