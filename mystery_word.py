@@ -45,14 +45,14 @@ def play_game():
             underscore_list[index] = user_guess
             print("You guessed right!")
             print(' '.join(underscore_list))
-            # m in dream is not printing correctly
+    # How do I make the below happen? Not inside the for loop...
+    # wrong_guess_count += 1
+    # print("Your letter is not in the word. Try another guess.\n")
+    # print(wrong_guess_count)
+
 
 # while loop: while wrong_guess_count < 8...
 # break: when wrong_guess_count = 8
-
-# trying to write code for process of just one guess:
-# for char in s:
-# print(char)
 
 
 # CLASS EXAMPLE
