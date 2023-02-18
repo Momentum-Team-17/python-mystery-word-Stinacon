@@ -14,16 +14,11 @@ def choose_random_word(list):
     return word
 
 
-# def check_one_guess(word):
-#     for char in word:
-
-
 def play_game():
     # good illustration of calling a function within a function
     word_to_guess = choose_random_word(open_file('test-word.txt'))
     word_length = len(word_to_guess)
     underscore = '_' * word_length
-    # underscore_as_list = list(underscore)
 
     # for me to know what the word is for now; will take out later
     print(word_to_guess)
@@ -39,16 +34,16 @@ def play_game():
     wrong_guess_letters = []
     wrong_guess_count = 0
     underscore_list = list(underscore)
+    if user_guess not in word_to_guess:
+        wrong_guess_count += 1
+        print("Your letter is not in the word. Try another guess.\n")
+        # print(wrong_guess_count)
     # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
     for index in range(len(word_to_guess)):
         if word_to_guess[index] == user_guess:
             underscore_list[index] = user_guess
             print("You guessed right!")
             print(' '.join(underscore_list))
-    # How do I make the below happen? Not inside the for loop...
-    # wrong_guess_count += 1
-    # print("Your letter is not in the word. Try another guess.\n")
-    # print(wrong_guess_count)
 
 
 # while loop: while wrong_guess_count < 8...
