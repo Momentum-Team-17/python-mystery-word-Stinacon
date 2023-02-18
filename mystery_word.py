@@ -38,31 +38,34 @@ def play_game():
 
     right_guess_count = 0
     wrong_guess_count = 0
+
     i = 0
     for char in word_to_guess:
         current_index = word_to_guess[i]
         i += 1
         if current_index == user_guess:
-            print("Nice guess")
+            updated_game_board = underscore[:i] + \
+                user_guess + underscore[i+1:]
+            print(updated_game_board)
 
-    # while loop: while wrong_guess_count < 8...
-    # break: when wrong_guess_count = 8
+# while loop: while wrong_guess_count < 8...
+# break: when wrong_guess_count = 8
 
-    # trying to write code for process of just one guess:
-    # for char in s:
-    # print(char)
+# trying to write code for process of just one guess:
+# for char in s:
+# print(char)
 
 
-    # CLASS EXAMPLE
-    # word = 'apple'
-    # wrong_guesses = ['b', 'd']
-    # right_guesses = ['a', 'p']
-    # game_board = ''
-    # for letter in word:
-    #     if letter in right_guesses:
-    #         game_board += letter + ' '
-    #     else:
-    #         game_board += '_ '
-    # print(game_board)
+# CLASS EXAMPLE
+# word = 'apple'
+# wrong_guesses = ['b', 'd']
+# right_guesses = ['a', 'p']
+# game_board = ''
+# for letter in word:
+#     if letter in right_guesses:
+#         game_board += letter + ' '
+#     else:
+#         game_board += '_ '
+# print(game_board)
 if __name__ == "__main__":
     play_game()
