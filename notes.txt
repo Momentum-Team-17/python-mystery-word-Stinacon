@@ -17,4 +17,12 @@
 
 6. Ask the user if they want to play again. If so, start again at step 2.
 
-
+*) KEY OF VARIABLES:
+    - word to guess stored as: word_to_guess
+    - length of word to guess (int): word_length
+    - string of underscores = length of word to guess: underscore
+    - word to guess underscores stored as list to iterate through: underscore_as_list
+    - user guess stored as: user_guess
+    - list to store accumulated right guesses: right_guesses
+    - list to store accumulated wrong guesses: wrong_guesses
+    - number of wrong guesses so far: wrong_guess_count
