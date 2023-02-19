@@ -40,18 +40,16 @@ def play_game():
                     underscore_list[index] = user_guess
                     print("You guessed right!")
                     print(' '.join(underscore_list))
-                    user_guess = input("Guess another letter.\n")
         elif len(user_guess) > 1:
-            user_guess = input("Your entry is invalid. Try again. ")
+            print("Your entry is invalid. Try again. ")
             print(wrong_guess_count)
         elif user_guess not in word_to_guess and user_guess not in wrong_guess_letters:
             wrong_guess_count += 1
             wrong_guess_letters.append(user_guess)
             print(wrong_guess_count)
-            user_guess = input("Nope! Guess another letter.\n")
+            print("Your guess is not in the word.\n")
         else:
-            user_guess = input(
-                "You have already guessed that letter. Try again.")
+            print("You have already guessed that letter. Try again.")
 
         # should i use if in instead of a loop below?
         # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
