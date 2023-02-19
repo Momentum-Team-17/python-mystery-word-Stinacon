@@ -26,34 +26,38 @@ def play_game():
     print(underscore)
     # add spaces to this print statement
 
-    user_guess = input('Guess a letter!\n').lower()
-    if len(user_guess) > 1:
-        user_guess = input("Your entry is invalid. Try again. ")
-        # print(user_guess)
+    # print(user_guess)
 
     wrong_guess_letters = []
     wrong_guess_count = 0
     underscore_list = list(underscore)
+
     while wrong_guess_count < 8:
+        user_guess = input('Guess a letter!\n').lower()
+        if len(user_guess) > 1:
+            user_guess = input("Your entry is invalid. Try again. ")
         if user_guess not in word_to_guess:
             wrong_guess_count += 1
             wrong_guess_letters.append(user_guess)
-
-        # print(wrong_guess_count)
+            print(wrong_guess_count)
+            user_guess = input("Guess another letter.\n")
         # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
-    # should i use if in instead of a loop below?
-            # if user_guess in wrong_guess_letters:
-            #     print(input("You have already guessed that letter. Try again."))
-        else:
-            for index in range(len(word_to_guess)):
-                if word_to_guess[index] == user_guess:
-                    underscore_list[index] = user_guess
-                    print("You guessed right!")
-                    print(' '.join(underscore_list))
+        # should i use if in instead of a loop below?
+        if user_guess in wrong_guess_letters:
+            user_guess = input(
+                "You have already guessed that letter. Try again.")
+            print(wrong_guess_count)
+        for index in range(len(word_to_guess)):
+            if word_to_guess[index] == user_guess:
+                underscore_list[index] = user_guess
+                print("You guessed right!")
+                print(' '.join(underscore_list))
+                user_guess = input("Guess another letter.\n")
+
         # an if or elif inside while loop that "breaks" when all letters have been guessed correctly
     else:
         print("You have used all 8 guesses. You have been eliminated.")
-
+        user_guess
     play_again = input("Do you want to play again Y/N?\n")
     if play_again == 'Y':
         play_game()
