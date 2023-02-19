@@ -36,17 +36,18 @@ def play_game():
         user_guess = input('Guess a letter!\n').lower()
         if len(user_guess) > 1:
             user_guess = input("Your entry is invalid. Try again. ")
-        if user_guess not in word_to_guess:
+            print(wrong_guess_count)
+        if user_guess not in word_to_guess and user_guess not in wrong_guess_letters:
             wrong_guess_count += 1
             wrong_guess_letters.append(user_guess)
             print(wrong_guess_count)
-            user_guess = input("Guess another letter.\n")
-        # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
-        # should i use if in instead of a loop below?
+            user_guess = input("Nope! Guess another letter.\n")
         if user_guess in wrong_guess_letters:
             user_guess = input(
                 "You have already guessed that letter. Try again.")
-            print(wrong_guess_count)
+
+        # should i use if in instead of a loop below?
+        # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
         for index in range(len(word_to_guess)):
             if word_to_guess[index] == user_guess:
                 underscore_list[index] = user_guess
