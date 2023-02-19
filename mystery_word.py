@@ -34,26 +34,27 @@ def play_game():
 
     while wrong_guess_count < 8:
         user_guess = input('Guess a letter!\n').lower()
-        if len(user_guess) > 1:
+        if user_guess in word_to_guess:
+            for index in range(len(word_to_guess)):
+                if word_to_guess[index] == user_guess:
+                    underscore_list[index] = user_guess
+                    print("You guessed right!")
+                    print(' '.join(underscore_list))
+                    user_guess = input("Guess another letter.\n")
+        elif len(user_guess) > 1:
             user_guess = input("Your entry is invalid. Try again. ")
             print(wrong_guess_count)
-        if user_guess not in word_to_guess and user_guess not in wrong_guess_letters:
+        elif user_guess not in word_to_guess and user_guess not in wrong_guess_letters:
             wrong_guess_count += 1
             wrong_guess_letters.append(user_guess)
             print(wrong_guess_count)
             user_guess = input("Nope! Guess another letter.\n")
-        if user_guess in wrong_guess_letters:
+        else:
             user_guess = input(
                 "You have already guessed that letter. Try again.")
 
         # should i use if in instead of a loop below?
         # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
-        for index in range(len(word_to_guess)):
-            if word_to_guess[index] == user_guess:
-                underscore_list[index] = user_guess
-                print("You guessed right!")
-                print(' '.join(underscore_list))
-                user_guess = input("Guess another letter.\n")
 
         # an if or elif inside while loop that "breaks" when all letters have been guessed correctly
     else:
