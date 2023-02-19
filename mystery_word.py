@@ -34,18 +34,29 @@ def play_game():
     wrong_guess_letters = []
     wrong_guess_count = 0
     underscore_list = list(underscore)
-    if user_guess not in word_to_guess:
-        wrong_guess_count += 1
-        print("Your letter is not in the word. Try another guess.\n")
+    while wrong_guess_count < 8:
+        if user_guess not in word_to_guess:
+            wrong_guess_count += 1
+            wrong_guess_letters.append(user_guess)
+
         # print(wrong_guess_count)
-    # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
-    for index in range(len(word_to_guess)):
-        if word_to_guess[index] == user_guess:
-            underscore_list[index] = user_guess
-            print("You guessed right!")
-            print(' '.join(underscore_list))
+        # The below loop tests one guess against the word; prints updated gameboard if guess is correct.
+    # should i use if in instead of a loop below?
+            # if user_guess in wrong_guess_letters:
+            #     print(input("You have already guessed that letter. Try again."))
+        else:
+            for index in range(len(word_to_guess)):
+                if word_to_guess[index] == user_guess:
+                    underscore_list[index] = user_guess
+                    print("You guessed right!")
+                    print(' '.join(underscore_list))
+        # an if or elif inside while loop that "breaks" when all letters have been guessed correctly
+    else:
+        print("You have used all 8 guesses. You have been eliminated.")
 
-
+    play_again = input("Do you want to play again Y/N?\n")
+    if play_again == 'Y':
+        play_game()
 # while loop: while wrong_guess_count < 8...
 # break: when wrong_guess_count = 8
 
